@@ -48,9 +48,7 @@ export default function App() {
 
     async function getData() {
       const response = await api.get("/repositories");
-      setRepositories(
-        response.data.map((rep) => ({ ...rep, techs: rep.techs.split(",") }))
-      );
+      setRepositories(response.data);
     }
     getData();
   }, []);
